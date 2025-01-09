@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delivery Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <table border="1">
+        <tr>
+            <th>Package ID</th>
+            <th>Coordinates</th>
+            <th>Delivery Address</th>
+            <th>Item Name</th>
+            <th>Time of Departure</th>
+            <th>Current Position</th>
+            <th>Distance (km)</th>
+            <th>Timestamp</th>
+        </tr>
+        {% for delivery in deliveries %}
+        <tr>
+            <td>{{ delivery.package_id }}</td>
+            <td>{{ delivery.coordinates }}</td>
+            <td>{{ delivery.delivery_address }}</td>
+            <td>{{ delivery.item_name }}</td>
+            <td>{{ delivery.time_of_departure }}</td>
+            <td>{{ delivery.current_position }}</td>
+            <td>{{ delivery.current_distance }}</td>
+            <td>{{ delivery.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

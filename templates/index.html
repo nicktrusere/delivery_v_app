@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delivery Tracker</title>
+</head>
+<body>
+    <h1>Delivery Tracker</h1>
+    <form action="/process-speech" method="POST" enctype="multipart/form-data">
+        <label>Upload Audio:</label>
+        <input type="file" name="audio" required>
+        <button type="submit">Process</button>
+    </form>
+    <h2>Deliveries</h2>
+    <ul>
+        {% for delivery in deliveries %}
+        <li>
+            Package ID: {{ delivery.package_id }}, Address: {{ delivery.delivery_address }},
+            Current Distance: {{ delivery.current_distance }} km
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
